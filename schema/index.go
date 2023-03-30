@@ -39,7 +39,7 @@ func (schema *Schema) ParseIndexes() map[string]Index {
 			}
 			for _, index := range fieldIndexes {
 				idx := indexes[index.Name]
-				idx.Name = index.Name
+				idx.Name = schema.Table + "_" + index.Name
 				if idx.Class == "" {
 					idx.Class = index.Class
 				}
